@@ -19,7 +19,6 @@ public class ParticlePosition : MonoBehaviour
         if (currentParticle != currentMonster)
         {
             transform.position = currentMonster; 
-            Debug.Log("The particle is at the monsters position.");
         }
     }
 }
