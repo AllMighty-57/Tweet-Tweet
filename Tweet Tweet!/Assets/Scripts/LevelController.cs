@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +21,13 @@ public class LevelController : MonoBehaviour
 
     void NextLevel()
     {
-        Debug.Log("Got to next level.");
+        Debug.Log("Got to next level."); 
+        StartCoroutine(delayStart());
+    } 
+    
+    private IEnumerator delayStart()
+    {
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

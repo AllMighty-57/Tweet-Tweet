@@ -9,6 +9,7 @@ public class Bird : MonoBehaviour
 
     public float velocity = 750;
     public float _maxDragDistance = 5;
+    public bool IsDragging { get; private set; }
 
     void Start()
     { 
@@ -20,7 +21,8 @@ public class Bird : MonoBehaviour
 
     private void OnMouseDown()
     {
-       _sprite.color = Color.red;
+       _sprite.color = Color.red; 
+        IsDragging = true;
     }
 
     private void OnMouseUp()
@@ -32,7 +34,8 @@ public class Bird : MonoBehaviour
         rb.isKinematic = false;
         rb.AddForce(direction * velocity);
 
-        _sprite.color = Color.white;
+        _sprite.color = Color.white; 
+        IsDragging = false;
     }
 
     private void OnMouseDrag()
@@ -41,22 +44,16 @@ public class Bird : MonoBehaviour
 
         Vector2 playArea = mousePosition;
 
-        float distance = Vector2.Distance(playArea, _startPosition); 
-        if(distance > _maxDragDistance)
+        float distance = Vector2.Distance(playArea, _startPosition);
+        if (distance > _maxDragDistance)
         {
-            Vector2 direction = playArea - _startPosition; 
+            Vector2 direction = playArea - _startPosition;
             direction.Normalize();
             playArea = _startPosition + (direction * _maxDragDistance);
         }
-        
+
 
         rb.position = playArea;
-    }
-
-
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
