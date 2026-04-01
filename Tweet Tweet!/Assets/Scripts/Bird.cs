@@ -34,6 +34,9 @@ public class Bird : MonoBehaviour
         rb.isKinematic = false;
         rb.AddForce(direction * velocity);
 
+        var auidoSource = GetComponent<AudioSource>(); 
+        auidoSource.Play();
+
         _sprite.color = Color.white; 
         IsDragging = false;
     }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -6,6 +7,24 @@ public class Monster : MonoBehaviour
     public Sprite _dead;
     public ParticleSystem _particles;
     private bool HasDied = false;
+
+    private void OnMouseDown()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+    IEnumerator Start()
+    { 
+        while (HasDied == false)
+        { 
+            float delay = UnityEngine.Random.Range(5, 30);
+            yield return new WaitForSeconds(delay);
+            if (HasDied == false)
+            { 
+                GetComponent<AudioSource>().Play(); 
+            }
+        }
+        
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     { 
