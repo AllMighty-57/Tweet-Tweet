@@ -7,20 +7,24 @@ public class Monster : MonoBehaviour
     public Sprite _dead;
     public ParticleSystem _particles;
     private bool HasDied = false;
+    public AudioClip[] ambientNoises;
+    public AudioClip[] deadNoises;
 
     private void OnMouseDown()
-    {
-        GetComponent<AudioSource>().Play();
+    { 
+        var clip = ambientNoises[Random.Range(0, ambientNoises.Length)];
+        GetComponent<AudioSource>().PlayOneShot(clip);
     }
     IEnumerator Start()
     { 
         while (HasDied == false)
-        { 
-            float delay = UnityEngine.Random.Range(5, 30);
+        {  
+            var clip = ambientNoises[Random.Range(0, ambientNoises.Length)];
+            float delay = Random.Range(5, 30);
             yield return new WaitForSeconds(delay);
             if (HasDied == false)
-            { 
-                GetComponent<AudioSource>().Play(); 
+            {
+                GetComponent<AudioSource>().PlayOneShot(clip);
             }
         }
         
@@ -49,6 +53,8 @@ public class Monster : MonoBehaviour
 
     private IEnumerator PoofAfterDelay()
     {
+        var clip = deadNoises[Random.Range(0, deadNoises.Length)];
+        GetComponent<AudioSource>().PlayOneShot(clip);
         GetComponent<SpriteRenderer>().sprite = _dead;
         yield return new WaitForSeconds(3); 
         Die();

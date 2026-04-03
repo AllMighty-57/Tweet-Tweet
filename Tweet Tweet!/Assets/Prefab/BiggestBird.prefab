@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 31
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 354e3b168c253dd4fb6a80ed1dad7358, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0992354cc22231046b8ee19fcd831ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 700
-  _maxDragDistance: 2.5
+  velocity: 1000
+  _maxDragDistance: 5
 --- !u!82 &5040259372134378115
 AudioSource:
   m_ObjectHideFlags: 0
