@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI; 
     public GameObject audioMenuUI; 
-    public GameObject MenuButton;
+    public GameObject MenuButton; 
+    public GameObject NextButton; 
+    public GameObject RestartButton;
     
     public void OnButtonClicked()
     {
@@ -51,5 +54,16 @@ public class PauseMenu : MonoBehaviour
     {
         audioMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
+    } 
+
+    public void loadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    } 
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }

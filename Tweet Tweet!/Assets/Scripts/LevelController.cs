@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     private GameObject[] _monsters;
+    public GameObject WinScreen;
 
     private void OnEnable()
     {
@@ -28,7 +29,7 @@ public class LevelController : MonoBehaviour
     private IEnumerator delayStart()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        WinScreen.SetActive(true);
     }
 
     bool MonstersAreDead()
@@ -39,5 +40,5 @@ public class LevelController : MonoBehaviour
                 return false;
         }
         return true;
-    }
+    } 
 }
