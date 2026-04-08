@@ -4,34 +4,34 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI; 
-    public GameObject audioMenuUI;
+    public GameObject audioMenuUI; 
+    public GameObject MenuButton;
     
-    void Update()
+    public void OnButtonClicked()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!GameIsPaused)
         {
-            if (GameIsPaused )
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Pause();
         }
-    } 
+        else
+        {
+            Resume();
+        }
+    }
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        GameIsPaused = false; 
+        MenuButton.SetActive(true);
     }
 
     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        GameIsPaused = true; 
+        MenuButton.SetActive(false);
     } 
     public void LoadMenu()
     {
