@@ -38,10 +38,12 @@ public class PauseMenu : MonoBehaviour
     } 
     public void LoadMenu()
     {
+        SceneManager.LoadScene("Menu");
         Debug.Log("Back to Menu");
     } 
     public void QuitGame()
     {
+        SceneManager.LoadScene("Credit");
         Debug.Log("Get outta HERE!");
     } 
 
