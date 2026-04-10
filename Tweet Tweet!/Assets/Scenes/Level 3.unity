@@ -533,11 +533,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190568406324420014, guid: 05c519d91eb5b14458c732dd5386ee02, type: 3}
+      propertyPath: NextButton
+      value: 
+      objectReference: {fileID: 289200815}
+    - target: {fileID: 7190568406324420014, guid: 05c519d91eb5b14458c732dd5386ee02, type: 3}
+      propertyPath: RestartButton
+      value: 
+      objectReference: {fileID: 289200814}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05c519d91eb5b14458c732dd5386ee02, type: 3}
+--- !u!1 &289200814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5775347034922909745, guid: 05c519d91eb5b14458c732dd5386ee02, type: 3}
+  m_PrefabInstance: {fileID: 289200813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &289200815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 905819771001048864, guid: 05c519d91eb5b14458c732dd5386ee02, type: 3}
+  m_PrefabInstance: {fileID: 289200813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &289200816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7752329965291082659, guid: 05c519d91eb5b14458c732dd5386ee02, type: 3}
+  m_PrefabInstance: {fileID: 289200813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &302093126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2960885886776954439, guid: 42060cebc8738f041a74309bb01da63e, type: 3}
@@ -2075,6 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39327af95271f4e47adad9a8e83ba63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinScreen: {fileID: 289200816}
 --- !u!4 &2101957448
 Transform:
   m_ObjectHideFlags: 0
