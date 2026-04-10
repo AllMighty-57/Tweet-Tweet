@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
     } 
     public void QuitGame()
     {
-        SceneManager.LoadScene("Credit");
+        SceneManager.LoadScene("Credits");
         Debug.Log("Get outta HERE!");
     } 
 
